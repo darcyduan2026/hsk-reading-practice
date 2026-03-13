@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HSK Reading Practice App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>HSK Reading Practice</h1>
+    <div id="setup">
+        <label for="vocab">Paste key vocabulary (comma-separated):</label>
+        <textarea id="vocab" placeholder="e.g., 苹果, 学习, 朋友"></textarea>
+        <label for="level">Select HSK Level:</label>
+        <select id="level">
+            <option value="1">HSK 1</option>
+            <option value="2">HSK 2</option>
+            <option value="3">HSK 3</option>
+            <option value="4">HSK 4</option>
+            <option value="5">HSK 5</option>
+            <option value="6">HSK 6</option>
+        </select>
+        <button id="generate">Generate Reading Text</button>
+    </div>
+    <div id="reading" style="display: none;">
+        <h2>Reading Text</h2>
+        <p id="text"></p>
+        <h2>Questions</h2>
+        <form id="questions">
+            <!-- Questions will be dynamically added here -->
+        </form>
+        <button id="submit">Submit Answers</button>
+    </div>
+    <div id="results" style="display: none;">
+        <h2>Results</h2>
+        <p id="score"></p>
+        <div id="feedback"></div>
+        <p id="reminder" style="color: red;"></p>
+        <button id="retry">Try Again</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
