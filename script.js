@@ -29,7 +29,24 @@ document.addEventListener('DOMContentLoaded', () => {
                 { q: "他在哪里吃饭？", a: ["家", "学校", "公园"], correct: 1 }
             ]
         },
-        // Add more levels similarly...
+        3: {
+            questions: [
+                { q: "他们去哪里旅游？", a: ["公园", "学校", "家里"], correct: 0 },
+                { q: "他们在旅游中学到了什么？", a: ["新知识", "新语言", "新朋友"], correct: 0 }
+            ]
+        },
+        4: {
+            questions: [
+                { q: "他们参加了什么活动？", a: ["文化交流活动", "体育比赛", "音乐会"], correct: 0 },
+                { q: "他们通过活动获得了什么？", a: ["深入了解", "奖品", "证书"], correct: 0 }
+            ]
+        },
+        5: {
+            questions: [
+                { q: "他们面对的主要挑战是什么？", a: ["激烈竞争", "语言障碍", "资金不足"], correct: 0 },
+                { q: "他们如何克服困难？", a: ["不断创新", "寻求帮助", "放弃计划"], correct: 0 }
+            ]
+        },
         6: {
             questions: [
                 { q: "他们坚持什么？", a: ["学习", "放弃", "休息"], correct: 0 },
@@ -57,9 +74,15 @@ document.addEventListener('DOMContentLoaded', () => {
             text = `我有${vocab[0] || '苹果'}。我喜欢${vocab[1] || '朋友'}。我们喜欢${vocab[2] || '学习'}${extras.length ? '。我还喜欢' + formatList(extras) : ''}。`;
         } else if (level == 2) {
             text = `今天是星期${vocab[0] || '一'}。我在${vocab[1] || '家'}吃饭。我的${vocab[2] || '朋友'}来了${extras.length ? '。我还喜欢' + formatList(extras) : ''}。`;
+        } else if (level == 3) {
+            text = `上个周末，我和朋友去${vocab[0] || '公园'}旅游。我们在那里学到了很多${vocab[1] || '新知识'}。${vocab[2] || '大家'}都觉得这次旅游很有意思${extras.length ? '。我们还体验了' + formatList(extras) : ''}。`;
+        } else if (level == 4) {
+            text = `我们参加了一次${vocab[0] || '文化交流'}活动，通过活动对${vocab[1] || '当地文化'}有了更深入的了解。活动中，${vocab[2] || '大家'}积极互动，分享各自的经历${extras.length ? '。活动内容还包括' + formatList(extras) : ''}。`;
+        } else if (level == 5) {
+            text = `在当今${vocab[0] || '竞争'}激烈的社会中，我们面临着各种挑战。只有不断${vocab[1] || '创新'}，才能在变化中找到机遇。面对${vocab[2] || '困境'}，我们要保持积极的心态，勇于突破自我${extras.length ? '。此外，我们还需重视' + formatList(extras) : ''}。`;
         } else {
-            // For higher levels, a short paragraph
-            text = `尽管${vocab[0] || '困难'}，我们仍坚持${vocab[1] || '学习'}。这种${vocab[2] || '精神'}值得学习${extras.length ? '。我们还喜欢' + formatList(extras) : ''}。`;
+            // Level 6: complex, literary style
+            text = `尽管${vocab[0] || '困难'}重重，我们仍坚持${vocab[1] || '学习'}，不断探索未知的领域。这种${vocab[2] || '精神'}不仅体现了人类对知识的渴望，更彰显了面对逆境时的坚韧与智慧${extras.length ? '。与此同时，' + formatList(extras) + '也在其中发挥了不可忽视的作用' : ''}。`;
         }
         textP.textContent = text;
         currentQuestions = data[level].questions;
